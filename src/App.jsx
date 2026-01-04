@@ -1,15 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
+import axios from 'axios';
 import { Github, Linkedin, Mail, ChevronDown, Code, Server, Database, Cloud, Terminal, ExternalLink, Moon, Sun, Monitor, Cpu, Briefcase, BookOpen, Settings } from 'lucide-react';
 
 // --- Datos actualizados con la trayectoria completa ---
 const personalInfo = {
-  name: "Mario De La Cruz",
+  name: "Mario De La Cruz Sandoval",
   title: "Full Stack Developer | Ingeniero de Software",
   summary: "Desarrollador Full Stack con más de 8 años de experiencia en el ciclo de vida del software. Experto en ecosistemas JavaScript (React, Node.js, Angular) y PHP (Laravel), con sólida base en administración de sistemas, despliegue en la nube (AWS) y arquitectura de bases de datos.",
   social: {
     linkedin: "https://www.linkedin.com/in/ingmario/",
-    email: "mailto:tuemail@ejemplo.com",
-    github: "https://github.com/"
+    email: "mailto:mario@de-la-cruz.com",
+    github: "https://mariotip.github.io/"
   }
 };
 
@@ -31,7 +32,7 @@ const experience = [
     stack: ["Vue.js", "Laravel", "AWS LightSail", "PHP", "MySQL"]
   },
   {
-    company: "metapack",
+    company: "Metapack",
     role: "Ingeniero de Software",
     period: "Feb. 2020 - Abr. 2021",
     location: "Guadalajara, México",
@@ -39,7 +40,7 @@ const experience = [
     stack: ["Angular", "Laravel", "MySQL", "Bootstrap", "Apache", "Linux"]
   },
   {
-    company: "samahara Startup",
+    company: "Samahara Startup",
     role: "Desarrollo de Software",
     period: "Jul. 2019 - Feb. 2020",
     location: "Hermosa Provincia",
@@ -55,20 +56,28 @@ const experience = [
     stack: ["Laravel", "PHP", "Node.js", "JavaScript", "AngularJS"]
   },
   {
-    company: "Recab de México",
-    role: "Administrador de Sistemas",
-    period: "Ago. 2015 - Ago. 2017",
-    location: "México",
-    description: "Administración de servidores, soporte técnico preventivo/correctivo y gestión de infraestructura. Supervisión de telefonía IP, seguridad (antivirus) y administración de redes e IPs.",
-    stack: ["Servidores", "Telefonía IP", "Redes", "Soporte Técnico", "Seguridad"]
-  },
-  {
-    company: "EMERGYS CORPORATION",
+    company: "Emergys Corporation",
     role: "Developer Junior",
     period: "Ene. 2017 - May. 2017",
     location: "Guadalajara, Jalisco",
     description: "Participación en el programa de desarrollo Emergys. Desarrollo web, pruebas de software (testing), aplicaciones Android y trabajo con IBM Integration Bus y Spring Java.",
     stack: ["IBM Integration Bus", "Java", "Spring", "Android", "Testing"]
+  },
+  {
+    company: "Recab de México",
+    role: "Programador Web",
+    period: "Sept. 2016 - Mar. 2017",
+    location: "Guadalajara, Jalisco",
+    description: "Desarrollo inicial de sitios y aplicaciones web internas en jornada parcial.",
+    stack: ["HTML", "CSS", "PHP", "Web Development"]
+  },
+  {
+    company: "Recab de México",
+    role: "Administrador de Sistemas",
+    period: "Ago. 2015 - Ago. 2016",
+    location: "México",
+    description: "Administración de servidores, soporte técnico preventivo/correctivo y gestión de infraestructura. Supervisión de telefonía IP, seguridad (antivirus) y administración de redes e IPs.",
+    stack: ["Servidores", "Telefonía IP", "Redes", "Soporte Técnico", "Seguridad"]
   },
   {
     company: "Instituciones Hermosa Provincia",
@@ -77,14 +86,6 @@ const experience = [
     location: "Guadalajara, Jalisco",
     description: "Actividades académicas y de enseñanza técnica en instituciones educativas.",
     stack: ["Educación", "Liderazgo", "Comunicación"]
-  },
-  {
-    company: "Recab de México",
-    role: "Programador Web",
-    period: "Sept. 2015 - Mar. 2016",
-    location: "Guadalajara, Jalisco",
-    description: "Desarrollo inicial de sitios y aplicaciones web internas en jornada parcial.",
-    stack: ["HTML", "CSS", "PHP", "Web Development"]
   }
 ];
 
@@ -139,6 +140,21 @@ const FadeIn = ({ children, delay = 0 }) => {
 export default function App() {
   const [darkMode, setDarkMode] = useState(true);
   const [activeSection, setActiveSection] = useState('home');
+  const [avatarUrl, setAvatarUrl] = useState('');
+
+  useEffect(() => {
+    const fetchAvatar = async () => {
+      try {
+        const response = await axios.get('https://api.github.com/users/mariotip');
+        setAvatarUrl(response.data.avatar_url);
+      } catch (error) {
+        console.error('Error fetching GitHub avatar:', error);
+        // Fallback to a placeholder or the previous hardcoded one if needed
+        setAvatarUrl('https://avatars.githubusercontent.com/u/16395065?v=4');
+      }
+    };
+    fetchAvatar();
+  }, []);
 
   const toggleTheme = () => setDarkMode(!darkMode);
 
@@ -185,6 +201,21 @@ export default function App() {
       <section id="home" className="min-h-screen flex items-center justify-center relative pt-20">
         <div className="text-center px-6 max-w-4xl">
           <FadeIn>
+            <div className="mb-6 relative inline-block">
+              <div className="absolute inset-0 bg-blue-500 blur-xl opacity-20 rounded-full"></div>
+              {avatarUrl ? (
+                <img
+                  src={avatarUrl}
+                  alt={personalInfo.name}
+                  className="relative w-32 h-32 rounded-full border-4 border-slate-800 object-cover mx-auto shadow-2xl"
+                />
+              ) : (
+                <div className="relative w-32 h-32 rounded-full border-4 border-slate-800 bg-slate-700 animate-pulse mx-auto shadow-2xl flex items-center justify-center">
+                  <Settings className="w-12 h-12 text-slate-500 animate-spin" />
+                </div>
+              )}
+            </div>
+            <div className="block"></div>
             <div className="inline-block px-4 py-1 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-xs font-bold mb-6">
               INGENIERO DE SOFTWARE FULL STACK
             </div>
@@ -248,8 +279,8 @@ export default function App() {
                   <div className="md:w-1/2 flex flex-col items-start md:items-end">
                     {i % 2 === 0 ? (
                       <div className="hidden md:block text-right">
-                        <span className="text-xs font-bold text-blue-500 uppercase">{exp.period}</span>
-                        <h4 className="text-sm text-slate-500">{exp.location}</h4>
+                        {/* <span className="text-xs font-bold text-blue-500 uppercase">{exp.period}</span>
+                        <h4 className="text-sm text-slate-500">{exp.location}</h4> */}
                       </div>
                     ) : (
                       <div className="p-6 rounded-3xl border w-full bg-slate-900/50 dark:bg-slate-800/40 border-slate-700/50">
@@ -267,8 +298,8 @@ export default function App() {
                   <div className="md:w-1/2 flex flex-col items-start">
                     {i % 2 !== 0 ? (
                       <div className="hidden md:block text-left">
-                        <span className="text-xs font-bold text-blue-500 uppercase">{exp.period}</span>
-                        <h4 className="text-sm text-slate-500">{exp.location}</h4>
+                        {/* <span className="text-xs font-bold text-blue-500 uppercase">{exp.period}</span>
+                        <h4 className="text-sm text-slate-500">{exp.location}</h4> */}
                       </div>
                     ) : (
                       <div className="p-6 rounded-3xl border w-full bg-slate-900/50 dark:bg-slate-800/40 border-slate-700/50">
