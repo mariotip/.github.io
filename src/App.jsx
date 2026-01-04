@@ -159,11 +159,40 @@ export default function App() {
     const fetchAvatar = async () => {
       try {
         const response = await axios.get('https://api.github.com/users/mariotip');
-        setAvatarUrl(response.data.avatar_url);
+        const url = response.data.avatar_url;
+        setAvatarUrl(url);
+
+        // Create a circular favicon using Canvas
+        const img = new Image();
+        img.crossOrigin = "anonymous";
+        img.onload = () => {
+          const canvas = document.createElement('canvas');
+          const size = 64; // Standard favicon size
+          canvas.width = size;
+          canvas.height = size;
+          const ctx = canvas.getContext('2d');
+
+          // Draw circle mask
+          ctx.beginPath();
+          ctx.arc(size / 2, size / 2, size / 2, 0, Math.PI * 2);
+          ctx.closePath();
+          ctx.clip();
+
+          // Draw image
+          ctx.drawImage(img, 0, 0, size, size);
+
+          // Update favicon
+          const link = document.querySelector("link[rel~='icon']");
+          if (link) {
+            link.href = canvas.toDataURL("image/png");
+            link.type = "image/png";
+          }
+        };
+        img.src = url;
       } catch (error) {
         console.error('Error fetching GitHub avatar:', error);
-        // Fallback to a placeholder or the previous hardcoded one if needed
-        setAvatarUrl('https://avatars.githubusercontent.com/u/16395065?v=4');
+        const fallback = 'https://avatars.githubusercontent.com/u/16395065?v=4';
+        setAvatarUrl(fallback);
       }
     };
     fetchAvatar();
@@ -203,23 +232,26 @@ export default function App() {
             <button onClick={toggleTheme} className="p-2 rounded-full hover:bg-slate-700/50 transition-colors">
               {darkMode ? <LightMode className="w-5 h-5 text-yellow-400" /> : <DarkMode className="w-5 h-5 text-slate-600" />}
             </button>
-            <div className="flex items-center gap-2">
-              <a href={personalInfo.social.github} target="_blank" rel="noreferrer" className="p-2 rounded-lg hover:bg-slate-700/30 transition-all hover:scale-110" title="GitHub">
+            <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide whitespace-nowrap max-w-[140px] xs:max-w-[180px] sm:max-w-none px-2">
+              <a href={personalInfo.social.github} target="_blank" rel="noreferrer" className="p-2 rounded-lg hover:bg-slate-700/30 transition-all hover:scale-110 shrink-0" title="GitHub">
                 <GitHub className={`w-5 h-5 ${darkMode ? 'text-white' : 'text-slate-900'}`} />
               </a>
-              <a href={personalInfo.social.linkedin} target="_blank" rel="noreferrer" className="p-2 rounded-lg hover:bg-[#0A66C2]/10 transition-all hover:scale-110" title="LinkedIn">
+              <a href={personalInfo.social.linkedin} target="_blank" rel="noreferrer" className="p-2 rounded-lg hover:bg-[#0A66C2]/10 transition-all hover:scale-110 shrink-0" title="LinkedIn">
                 <LinkedIn className="w-5 h-5 text-[#0A66C2]" />
               </a>
-              <a href={personalInfo.social.twitter} target="_blank" rel="noreferrer" className="p-2 rounded-lg hover:bg-slate-700/30 transition-all hover:scale-110" title="X (Twitter)">
+              <a href={personalInfo.social.email} className="p-2 rounded-lg hover:bg-[#EA4335]/10 transition-all hover:scale-110 shrink-0" title="Email">
+                <Email className="w-5 h-5 text-[#EA4335]" />
+              </a>
+              <a href={personalInfo.social.twitter} target="_blank" rel="noreferrer" className="p-2 rounded-lg hover:bg-slate-700/30 transition-all hover:scale-110 shrink-0" title="X (Twitter)">
                 <XIcon className={`w-5 h-5 ${darkMode ? 'text-white' : 'text-black'}`} />
               </a>
-              <a href={personalInfo.social.whatsapp} target="_blank" rel="noreferrer" className="p-2 rounded-lg hover:bg-[#25D366]/10 transition-all hover:scale-110" title="WhatsApp">
+              <a href={personalInfo.social.whatsapp} target="_blank" rel="noreferrer" className="p-2 rounded-lg hover:bg-[#25D366]/10 transition-all hover:scale-110 shrink-0" title="WhatsApp">
                 <WhatsApp className="w-5 h-5 text-[#25D366]" />
               </a>
-              <a href={personalInfo.social.facebook} target="_blank" rel="noreferrer" className="p-2 rounded-lg hover:bg-[#1877F2]/10 transition-all hover:scale-110" title="Facebook">
+              <a href={personalInfo.social.facebook} target="_blank" rel="noreferrer" className="p-2 rounded-lg hover:bg-[#1877F2]/10 transition-all hover:scale-110 shrink-0" title="Facebook">
                 <Facebook className="w-5 h-5 text-[#1877F2]" />
               </a>
-              <a href={personalInfo.social.instagram} target="_blank" rel="noreferrer" className="p-2 rounded-lg hover:bg-[#E4405F]/10 transition-all hover:scale-110" title="Instagram">
+              <a href={personalInfo.social.instagram} target="_blank" rel="noreferrer" className="p-2 rounded-lg hover:bg-[#E4405F]/10 transition-all hover:scale-110 shrink-0" title="Instagram">
                 <Instagram className="w-5 h-5 text-[#E4405F]" />
               </a>
             </div>
