@@ -5,11 +5,11 @@ import XIcon from '@mui/icons-material/X';
 // --- Datos actualizados con la trayectoria completa ---
 const personalInfo = {
   name: "Mario De La Cruz Sandoval",
-  title: "Full Stack Developer | Ingeniero de Software",
-  summary: "Desarrollador Full Stack con más de 8 años de experiencia en el ciclo de vida del software. Experto en ecosistemas JavaScript (React, Node.js, Angular) y PHP (Laravel), con sólida base en administración de sistemas, despliegue en la nube (AWS) y arquitectura de bases de datos.",
+  title: "Senior Software Architect & Solutions Engineer",
+  summary: "Especialista en el diseño y ejecución de soluciones tecnológicas empresariales con más de 8 años impulsando el crecimiento de negocios. Experto en transformar necesidades corporativas en arquitecturas escalables de alta disponibilidad, optimizando infraestructuras críticas y garantizando la integridad de sistemas de misión mcrítica.",
   social: {
     linkedin: "https://www.linkedin.com/in/ingmario/",
-    email: "mailto:mario@de-la-cruz.com",
+    email: "mailto:ing_mariomcs@outlook.com",
     github: "https://github.com/mariotip",
     facebook: "https://www.facebook.com/ingmario/",
     instagram: "https://www.instagram.com/ingmario/",
@@ -21,92 +21,92 @@ const personalInfo = {
 const experience = [
   {
     company: "Garantia",
-    role: "Full Stack Developer",
+    role: "Senior Software Architect",
     period: "Mar. 2022 - Actualidad",
     location: "Zapopan, Jalisco",
-    description: "Desarrollo integral de aplicaciones web. Implementación de FrontEnd con Angular y React. Backend robusto con Node.js y Sequelize. Gestión de infraestructura y despliegue en AWS.",
+    description: "Liderazgo técnico en el diseño de ecosistemas digitales complejos. Orquestación de arquitecturas desacopladas con React y Angular bajo infraestructuras resilientes en AWS utilizando Node.js y Sequelize para la gestión de datos escalables.",
     stack: ["Angular", "React", "Node.js", "Sequelize", "MySQL", "AWS", "Ubuntu", "Adonis"],
     link: "https://www.garantia.mx/"
   },
   {
     company: "Turnapp",
-    role: "Full Stack Developer",
+    role: "Solutions Engineer",
     period: "Nov. 2020 - Jul. 2022",
     location: "Zapopan, Jalisco",
-    description: "Desarrollo Fullstack centrado en la agilidad. Frontend desarrollado en Vue.js y Backend en Laravel. Despliegue y gestión de servicios mediante AWS LightSail.",
+    description: "Ingeniería de soluciones Fullstack optimizadas para el rendimiento y la agilidad de procesos internos. Desarrollo de arquitecturas modulares con Vue.js y Laravel, simplificando despliegues críticos mediante servicios cloud de AWS.",
     stack: ["Vue.js", "Laravel", "AWS LightSail", "PHP", "MySQL"],
     link: "https://turn.com.mx/"
   },
   {
     company: "Metapack",
-    role: "Ingeniero de Software",
+    role: "Software Architect",
     period: "Feb. 2020 - Abr. 2021",
     location: "Guadalajara, México",
-    description: "Desarrollo de APIs REST con Laravel y MySQL. Creación de componentes modulares en Angular con Bootstrap. Administración de servidores Apache en entornos Linux.",
+    description: "Ingeniería de software enfocada en la creación de APIs industriales robustas y altamente escalables. Estandarización de componentes modulares en Angular y optimización de entornos de servidor Linux para garantizar la disponibilidad continua.",
     stack: ["Angular", "Laravel", "MySQL", "Bootstrap", "Apache", "Linux"],
     link: "https://www.metapack.com/"
   },
   {
     company: "Samahara Startup",
-    role: "Desarrollo de Software",
+    role: "Full Stack Engineer",
     period: "Jul. 2019 - Feb. 2020",
     location: "Hermosa Provincia",
-    description: "Backend con Node.js y AdonisJS 4.1 usando Lucid ORM y MongoDB. Soporte en aplicaciones móviles con React Native y desarrollo de APIs en Django REST Framework con PostgreSQL.",
+    description: "Diseño estratégico de arquitecturas backend modernas utilizando AdonisJS y MongoDB. Integración de soluciones híbridas con React Native y desarrollo de servicios REST distribuidos bajo arquitecturas PostgreSQL/Django.",
     stack: ["Node.js", "AdonisJS", "MongoDB", "React Native", "Django", "PostgreSQL"],
     link: "https://mubai.com.mx/"
   },
   {
     company: "Altatec de Occidente",
-    role: "Desarrollador Back-end",
+    role: "Senior Backend Developer",
     period: "Sept. 2017 - Jul. 2019",
     location: "Zapopan, Jalisco",
-    description: "Diseño y desarrollo de APIs RESTful utilizando Laravel (PHP) y Node.js. Implementación de interfaces con AngularJS.",
+    description: "Arquitectura y desarrollo de APIs RESTful de alto desempeño mediante el ecosistema Laravel y Node.js. Enfoque en la eficiencia transaccional e implementación de interfaces reactivas para la gestión de datos empresariales.",
     stack: ["Laravel", "PHP", "Node.js", "JavaScript", "AngularJS"],
     link: "https://altatec.com.mx/mx/category/software/"
   },
   {
     company: "Emergys Corporation México",
-    role: "Developer Junior",
+    role: "Software Solution Consultant (Jr)",
     period: "Ene. 2017 - May. 2017",
     location: "Zapopan, Jalisco",
-    description: "Participación en el programa de desarrollo Emergys. Desarrollo web, pruebas de software (testing), aplicaciones Android y trabajo con IBM Integration Bus y Spring Java.",
+    description: "Integración de sistemas empresariales mediante middleware (IBM Integration Bus) y desarrollo de aplicaciones robustas en el ecosistema Java Spring. Enfoque en el aseguramiento de la calidad y flujo de datos transaccionales.",
     stack: ["IBM Integration Bus", "Java", "Spring", "Android", "Testing"],
     link: "https://emergys.com.mx/"
   },
   {
     company: "Recab de México",
-    role: "Programador Web",
+    role: "Systems Developer",
     period: "Sept. 2016 - Mar. 2017",
     location: "Guadalajara, Jalisco",
-    description: "Desarrollo inicial de sitios y aplicaciones web internas en jornada parcial.",
+    description: "Ingeniería y mantenimiento de sistemas internos críticos, garantizando la estabilidad operativa y la funcionalidad de plataformas industriales de gestión web.",
     stack: ["HTML", "CSS", "PHP", "Web Development"],
     link: "https://recab.com.mx/"
   },
   {
     company: "Recab de México",
-    role: "Administrador de Sistemas",
+    role: "Infrastructure Manager",
     period: "Ago. 2015 - Ago. 2016",
     location: "México",
-    description: "Administración de servidores, soporte técnico preventivo/correctivo y gestión de infraestructura. Supervisión de telefonía IP, seguridad (antivirus) y administración de redes e IPs.",
+    description: "Gestión integral de infraestructura crítica, administración de redes corporativas y servidores. Supervisión del ecosistema de seguridad y aseguramiento de la continuidad operativa institucional.",
     stack: ["Servidores", "Telefonía IP", "Redes", "Soporte Técnico", "Seguridad"],
     link: "https://recab.com.mx/"
   },
   {
     company: "Instituciones Hermosa Provincia",
-    role: "Docencia",
+    role: "Technological Education Consultant",
     period: "Ene. 2013 - Jul. 2016",
     location: "Guadalajara, Jalisco",
-    description: "Actividades académicas y de enseñanza técnica en instituciones educativas.",
+    description: "Consultoría académica y liderazgo en programas de formación tecnológica, gestionando la transferencia de conocimiento técnico especializado en entornos educativos profesionales.",
     stack: ["Educación", "Liderazgo", "Comunicación"],
     link: "https://hermosaprovincia.com/"
   }
 ];
 
 const skills = [
-  { category: "Frontend", icon: <DesktopWindows className="w-6 h-6" />, items: ["React", "Angular", "Vue.js", "AngularJS", "Tailwind CSS", "Bootstrap", "JavaScript"] },
-  { category: "Backend", icon: <Storage className="w-6 h-6" />, items: ["Node.js", "Laravel", "AdonisJS", "Django", "Spring Java", "PHP", "Python"] },
-  { category: "Database & ORM", icon: <Dns className="w-6 h-6" />, items: ["MySQL", "PostgreSQL", "MongoDB", "Sequelize", "Lucid ORM"] },
-  { category: "Infra & Cloud", icon: <Cloud className="w-6 h-6" />, items: ["AWS (EC2, LightSail)", "Ubuntu/Linux", "Apache", "IBM Integration Bus", "Git"] },
+  { category: "Frontend Engineering", icon: <DesktopWindows className="w-6 h-6" />, items: ["React", "Angular", "Vue.js", "AngularJS", "Tailwind CSS", "Bootstrap", "JavaScript"] },
+  { category: "Cloud & Backend Architecture", icon: <Storage className="w-6 h-6" />, items: ["Node.js", "Laravel", "AdonisJS", "Django", "Spring Java", "PHP", "Python"] },
+  { category: "Data Management & ORM", icon: <Dns className="w-6 h-6" />, items: ["MySQL", "PostgreSQL", "MongoDB", "Sequelize", "Lucid ORM"] },
+  { category: "Critical Infrastructure", icon: <Cloud className="w-6 h-6" />, items: ["AWS (EC2, LightSail)", "Ubuntu/Linux", "Apache", "IBM Integration Bus", "Git"] },
 ];
 
 // --- Componentes UI ---
@@ -215,6 +215,7 @@ export default function App() {
       <nav className={`fixed top-0 w-full z-50 backdrop-blur-md transition-colors duration-300 ${darkMode ? 'bg-slate-900/80 border-b border-slate-800' : 'bg-white/80 border-b border-gray-200'}`}>
         <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
           <div className="font-bold text-xl cursor-pointer" onClick={() => scrollTo('home')}>
+            <Terminal className="w-5 h-5 mr-1 align-center" />
             <span className="text-blue-500">M</span>ario<span className="text-teal-400">.dev</span>
           </div>
           <div className="hidden md:flex space-x-8">
@@ -238,9 +239,6 @@ export default function App() {
               </a>
               <a href={personalInfo.social.linkedin} target="_blank" rel="noreferrer" className="p-2 rounded-lg hover:bg-[#0A66C2]/10 transition-all hover:scale-110 shrink-0" title="LinkedIn">
                 <LinkedIn className="w-5 h-5 text-[#0A66C2]" />
-              </a>
-              <a href={personalInfo.social.email} className="p-2 rounded-lg hover:bg-[#EA4335]/10 transition-all hover:scale-110 shrink-0" title="Email">
-                <Email className="w-5 h-5 text-[#EA4335]" />
               </a>
               <a href={personalInfo.social.twitter} target="_blank" rel="noreferrer" className="p-2 rounded-lg hover:bg-slate-700/30 transition-all hover:scale-110 shrink-0" title="X (Twitter)">
                 <XIcon className={`w-5 h-5 ${darkMode ? 'text-white' : 'text-black'}`} />
@@ -278,12 +276,12 @@ export default function App() {
               )}
             </div>
             <div className="block"></div>
-            <div className="inline-block px-4 py-1 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-xs font-bold mb-6">
-              INGENIERO DE SOFTWARE FULL STACK
+            <div className="inline-block px-4 py-1 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-xs font-bold mb-6 uppercase tracking-[0.2em]">
+              Soluciones Tecnológicas Empresariales
             </div>
             <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight">
-              Construyendo <br />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-400">Experiencias Digitales</span>
+              Escalando Negocios mediante <br />
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-400">Software de Clase Mundial</span>
             </h1>
             <p className={`text-lg md:text-xl mb-10 leading-relaxed ${darkMode ? 'text-slate-400' : 'text-gray-500'}`}>
               {personalInfo.summary}
@@ -399,7 +397,7 @@ export default function App() {
           <FadeIn>
             <h2 className="text-4xl font-black mb-8">Hablemos de tu próximo proyecto</h2>
             <p className="text-lg text-slate-400 mb-10 max-w-2xl mx-auto">
-              Mi experiencia abarca desde el desarrollo de software hasta la administración de servidores e infraestructura. Estoy listo para aportar valor a tu equipo.
+              Especialista en convertir desafíos tecnológicos complejos en soluciones digitales escalables. Estoy disponible para liderar la evolución técnica de su organización.
             </p>
             <div className="flex flex-wrap justify-center gap-6">
               <a href={personalInfo.social.linkedin} target="_blank" rel="noreferrer" className="flex items-center gap-3 px-8 py-4 bg-blue-600 rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-xl shadow-blue-900/40">
